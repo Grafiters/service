@@ -17,7 +17,7 @@ type MsUkerRoutes struct {
 
 func (s MsUkerRoutes) Setup() {
 	s.logger.Zap.Info("Setting Up Routes")
-	api := s.handler.Gin.Group("/api/v1/msuker").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/msuker")
 	{
 		api.POST("/getAll", s.msUkerController.GetAll)
 		// api.POST("/getUkerByBranch/:branchid", s.msUkerController.GetUkerByBranch)

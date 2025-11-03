@@ -31,7 +31,7 @@ func NewKriteriaPinjamanRoutes(
 
 func (s KriteriaPinjamanRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/kriteriapinjaman").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/kriteriapinjaman")
 	{
 		api.POST("/getAll", s.kriteriapinjaman.GetAll)
 	}

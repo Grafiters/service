@@ -20,7 +20,7 @@ type BriefingRoutes struct {
 
 func (s BriefingRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/briefing").Use(s.authMiddleware.Handler()).
+	api := s.handler.Gin.Group("/api/v1/briefing").
 		Use(s.authMiddleware.Handler()).
 		Use(s.audiTrail.Handler())
 	{

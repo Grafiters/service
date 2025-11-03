@@ -17,7 +17,7 @@ type IncidentRoutes struct {
 
 func (s IncidentRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/incident").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/incident")
 	{
 		api.POST("/getAll", s.IncidentController.GetAll)
 		api.POST("/getAllWithPaginate", s.IncidentController.GetAllWithPaginate)

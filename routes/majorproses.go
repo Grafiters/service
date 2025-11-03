@@ -17,7 +17,7 @@ type MajorProsesRoutes struct {
 
 func (s MajorProsesRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/majorproses").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/majorproses")
 	{
 		api.POST("/getAll", s.MJPController.GetAll)
 		api.POST("/getAllWithPaginate", s.MJPController.GetAllWithPaginate)

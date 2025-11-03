@@ -17,7 +17,7 @@ type SubIncidentRoutes struct {
 
 func (s SubIncidentRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/subincident").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/subincident")
 	{
 		api.POST("/getAll", s.SubIncidentController.GetAll)
 		api.POST("/getAllWithPaginate", s.SubIncidentController.GetAllWithPaginate)

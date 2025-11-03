@@ -18,7 +18,7 @@ type QuestionnerRoutes struct {
 
 func (s QuestionnerRoutes) Setup() {
 	s.logger.Zap.Info("Setting Up Routes")
-	api := s.handler.Gin.Group("/api/v1/questionner").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/questionner")
 	{
 		api.POST("/getQuestionnerList", s.questionController.GetQuestionnerList)
 	}

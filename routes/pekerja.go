@@ -17,7 +17,7 @@ type PekerjaRoutes struct {
 
 func (s PekerjaRoutes) Setup() {
 	s.logger.Zap.Info("Setting Up Routes")
-	apiPekerja := s.handler.Gin.Group("/api/v1/pekerja").Use(s.authMiddleware.Handler())
+	apiPekerja := s.handler.Gin.Group("/api/v1/pekerja")
 	{
 		apiPekerja.POST("/getAllPekerjaBranch", s.PekerjaController.GetAllPekerjaBranch)
 		apiPekerja.POST("/getApproval", s.PekerjaController.GetApproval)

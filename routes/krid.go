@@ -18,7 +18,7 @@ type KridRoutes struct {
 
 func (s KridRoutes) Setup() {
 	s.logger.Zap.Info("Setting Up routes")
-	api := s.handler.Gin.Group("/api/v1/krid").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/krid")
 	{
 		api.POST("/getDetailIndikator", s.KridController.GetDetailIndikator)
 		api.POST("/getAllParameterIndikator", s.KridController.GetAllParameterIndikator)

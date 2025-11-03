@@ -13,7 +13,7 @@ type LinkcageRoutes struct {
 }
 
 func (s LinkcageRoutes) Setup() {
-	api := s.handler.Gin.Group("/api/v1/linkcage").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/linkcage")
 	{
 		api.POST("/getAll", s.LinkcageController.GetAll)
 		api.POST("/store", s.LinkcageController.Store)

@@ -17,7 +17,7 @@ type EventType1Routes struct {
 
 func (s EventType1Routes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/eventtypelv1").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/eventtypelv1")
 	{
 		api.POST("/getAll", s.ET1Controller.GetAll)
 		api.POST("/getAllWithPaginate", s.ET1Controller.GetAllWithPaginate)

@@ -17,7 +17,7 @@ type PgsUserRoutes struct {
 
 func (s PgsUserRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/pgsuser").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/pgsuser")
 	{
 		api.POST("/getAll", s.PgsUserController.GetAll)
 		api.POST("/getAllWithPaginate", s.PgsUserController.GetAllWithPaginate)

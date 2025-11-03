@@ -17,7 +17,7 @@ type FileManagerRoutes struct {
 
 func (s FileManagerRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/fileManager").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/fileManager")
 	{
 		api.POST("/uploadFile", s.FileManagerController.MakeUpload)
 		api.POST("/getFile", s.FileManagerController.GetFile)

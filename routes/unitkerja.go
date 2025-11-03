@@ -17,7 +17,7 @@ type UnitKerjaRoutes struct {
 
 func (s UnitKerjaRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/unitkerja").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/unitkerja")
 	{
 		api.GET("/getAll", s.UnitKerjaController.GetAll)
 		api.GET("/getOne/:id", s.UnitKerjaController.GetOne)

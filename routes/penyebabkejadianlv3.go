@@ -17,7 +17,7 @@ type PenyebabKejadianLv3Routes struct {
 
 func (s PenyebabKejadianLv3Routes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/penyebabkejadianlv3").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/penyebabkejadianlv3")
 	{
 		api.POST("/getAll", s.PenyebabKejadianLv3Controller.GetAll)
 		api.POST("/getAllWithPaginate", s.PenyebabKejadianLv3Controller.GetAllWithPaginate)

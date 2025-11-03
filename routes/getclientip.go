@@ -18,7 +18,7 @@ type ClientIPRoutes struct {
 
 func (s ClientIPRoutes) Setup() {
 	s.logger.Zap.Info("Setting Up routes")
-	api := s.handler.Gin.Group("/api/v1/clientip") //.Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/clientip") //
 	{
 		api.GET("/getClientIP", s.ClientIPController.ClientIP)
 

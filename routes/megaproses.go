@@ -17,7 +17,7 @@ type MegaProsesRoutes struct {
 
 func (s MegaProsesRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/megaproses").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/megaproses")
 	{
 		api.POST("/getAll", s.MPController.GetAll)
 		api.POST("/getAllWithPaginate", s.MPController.GetAllWithPaginate)

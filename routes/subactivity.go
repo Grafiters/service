@@ -17,7 +17,7 @@ type SubActivityRoutes struct {
 
 func (s SubActivityRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/subactivity").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/subactivity")
 	{
 		api.POST("/getAll", s.SubActivityController.GetAll)
 		api.POST("/getAllWithPagination", s.SubActivityController.GetAllWithPagination)

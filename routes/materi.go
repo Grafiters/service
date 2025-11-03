@@ -18,7 +18,7 @@ type MateriRoutes struct {
 
 func (s MateriRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("api/v1/materi").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("api/v1/materi")
 	{
 		api.POST("/getAll", s.MateriController.GetAll)
 		api.POST("/store", s.MateriController.Store)

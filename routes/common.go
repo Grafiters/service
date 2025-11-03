@@ -17,7 +17,7 @@ type CommonRoutes struct {
 
 func (s CommonRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	// api := s.handler.Gin.Group("api/v1/common").Use(s.authMiddleware.Handler())
+	// api := s.handler.Gin.Group("api/v1/common")
 	api := s.handler.Gin.Group("api/v1/common")
 	{
 		api.POST("/pnnama", s.CommonController.GetNpNamaFilter)

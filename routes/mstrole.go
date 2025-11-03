@@ -17,7 +17,7 @@ type MstRoleRoutes struct {
 
 func (s MstRoleRoutes) Setup() {
 	s.logger.Zap.Info("Setting Up Routes")
-	api := s.handler.Gin.Group("/api/v1/mstrole").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/mstrole")
 	{
 		api.POST("/getAll", s.mstRoleController.GetAll)
 		api.POST("/getAllWithPaginate", s.mstRoleController.GetAllWithPaginate)

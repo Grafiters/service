@@ -17,7 +17,7 @@ type UkerKelolaanRoutes struct {
 
 func (s UkerKelolaanRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/ukerkelolaan").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/ukerkelolaan")
 	{
 		api.POST("/getAllWithPaginate", s.UKController.GetAllWithPaginate)
 		api.POST("/filterUkerKelolaan", s.UKController.FilterUkerKelolaan)

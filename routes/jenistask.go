@@ -17,7 +17,7 @@ type JenisTaskRoutes struct {
 
 func (s JenisTaskRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/jenistask").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/jenistask")
 	{
 		api.POST("/getData", s.JenisTaskController.GetData)
 	}

@@ -23,7 +23,6 @@ func ReturnToJson(w *gin.Context, status int, codeStatus string, desc string, da
 
 	w.JSON(status, res)
 }
-
 func ReturnToJsonWithPaginate(w *gin.Context, status int, codeStatus string, desc string, data interface{}, pagination interface{}) {
 	fmt.Println("status ", status)
 	var res Response

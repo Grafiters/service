@@ -17,7 +17,7 @@ type LaporanRoutes struct {
 
 func (s LaporanRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	//api := s.handler.Gin.Group("api/v1/laporan").Use(s.authMiddleware.Handler())
+	//api := s.handler.Gin.Group("api/v1/laporan")
 	api := s.handler.Gin.Group("api/v1/laporan")
 	{
 		api.POST("/historyTaskDataVerifikasi", s.LaporanController.GetLaporanHistoriTaskDataVerifikasi)

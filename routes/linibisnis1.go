@@ -17,7 +17,7 @@ type LiniBisnis1Routes struct {
 
 func (s LiniBisnis1Routes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/linibisnislv1").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/linibisnislv1")
 	{
 		api.POST("/getAll", s.LB1Controller.GetAll)
 		api.POST("/getAllWithPaginate", s.LB1Controller.GetAllWithPaginate)

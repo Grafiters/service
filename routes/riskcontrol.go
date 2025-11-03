@@ -17,7 +17,7 @@ type RiskControlRoutes struct {
 
 func (s RiskControlRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("api/v1/riskcontrol").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("api/v1/riskcontrol")
 	{
 		api.POST("/getAll", s.RiskControlController.GetAll)
 		api.POST("/getAllWithPaginate", s.RiskControlController.GetAllWithPaginate)

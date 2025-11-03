@@ -17,7 +17,7 @@ type UploadDataRoutes struct {
 
 func (s UploadDataRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("api/v1/upload").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("api/v1/upload")
 	{
 		api.POST("/riskcontrol", s.UploadDataController.UploadRiskControl)
 		api.POST("/riskindicator", s.UploadDataController.UploadRiskIndicator)

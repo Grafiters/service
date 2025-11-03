@@ -32,7 +32,7 @@ func NewDownloadRoutes(
 
 func (s DownloadRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/download").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/download")
 	{
 		api.POST("/getListDownload", s.DownloadController.GetListDownload)
 		api.POST("/getReportType", s.DownloadController.GetReportType)

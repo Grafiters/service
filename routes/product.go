@@ -17,7 +17,7 @@ type ProductRoutes struct {
 
 func (s ProductRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/product").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/product")
 	{
 		api.POST("/getAll", s.ProductController.GetAll)
 		api.POST("/getAllWithPage", s.ProductController.GetAllWithPage)

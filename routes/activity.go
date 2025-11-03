@@ -18,7 +18,7 @@ type ActivityRoutes struct {
 
 func (s ActivityRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/activity").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/activity")
 	{
 		api.POST("/getAll", s.ActivityController.GetAll)
 		api.POST("/getAllWithPagination", s.ActivityController.GetAllWithPagination)

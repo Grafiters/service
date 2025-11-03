@@ -17,7 +17,7 @@ type MQRoutes struct {
 
 func (s MQRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/mq").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/mq")
 	{
 		api.POST("/menu/getAll", s.MQController.GetAllMenu)
 		api.POST("/menu/getAllMstMenu", s.MQController.GetAllMstMenu)

@@ -17,7 +17,7 @@ type AplikasiRoutes struct {
 
 func (s AplikasiRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/aplikasi").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/aplikasi")
 	{
 		api.POST("/getAll", s.aplikasiController.GetAll)
 		api.POST("/getOne/:id", s.aplikasiController.GetOne)

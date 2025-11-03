@@ -18,7 +18,7 @@ type ManagementUserRoutes struct {
 
 func (s ManagementUserRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/managementuser").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/managementuser")
 	{
 		api.POST("/getAll", s.MUController.GetAll)
 		api.POST("/getAllWithPaginate", s.MUController.GetAllWithPaginate)

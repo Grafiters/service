@@ -31,7 +31,7 @@ func NewDataTematikRoutes(
 
 func (s DataTematikRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/datatematik").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/datatematik")
 	{
 		api.POST("/getSampleData", s.datatematik.GetSampleDataTematik)
 		api.POST("/updateStatusVerif", s.datatematik.UpdateStatusDataSample)

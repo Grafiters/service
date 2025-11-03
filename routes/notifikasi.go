@@ -17,7 +17,7 @@ type NotifikasiRoutes struct {
 
 func (s NotifikasiRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("api/v1/notifikasi").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("api/v1/notifikasi")
 	// api := s.handler.Gin.Group("api/v1/notifikasi")
 	{
 		api.POST("/list", s.NotifikasiController.GetListNotifikasi)

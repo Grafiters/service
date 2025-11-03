@@ -17,7 +17,7 @@ type SubMajorProsesRoutes struct {
 
 func (s SubMajorProsesRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/submajorproses").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/submajorproses")
 	{
 		api.POST("/getAll", s.SUBMPController.GetAll)
 		api.POST("/getAllWithPaginate", s.SUBMPController.GetAllWithPaginate)

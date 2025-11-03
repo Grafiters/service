@@ -17,7 +17,7 @@ type MstKriteriaRoutes struct {
 
 func (s MstKriteriaRoutes) Setup() {
 	s.logger.Zap.Info("Setting Up Routes")
-	api := s.handler.Gin.Group("/api/v1/mstkriteria").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/mstkriteria")
 	{
 		api.POST("/getAll", s.mstKriteriaController.GetAll)
 		api.POST("/getAllWithPaginate", s.mstKriteriaController.GetAllWithPaginate)

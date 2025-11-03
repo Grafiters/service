@@ -19,7 +19,7 @@ type AuditTrailRoutes struct {
 
 func (s AuditTrailRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/audittrail").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/audittrail")
 	{
 		api.POST("/store", s.controllers.Store)
 		api.POST("/getLog", s.controllers.GetLog)

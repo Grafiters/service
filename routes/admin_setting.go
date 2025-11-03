@@ -17,7 +17,7 @@ type AdminSettingRoutes struct {
 
 func (s AdminSettingRoutes) Setup() {
 	s.logger.Zap.Info("Setting up routes")
-	api := s.handler.Gin.Group("/api/v1/admin_setting").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/admin_setting")
 	{
 		api.POST("/show", s.AdminSettingController.Show)
 		api.POST("/getAll", s.AdminSettingController.GetAll)

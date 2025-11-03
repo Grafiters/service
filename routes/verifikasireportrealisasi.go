@@ -20,7 +20,7 @@ type VerifikasiReportRealisasiRoutes struct {
 
 func (s VerifikasiReportRealisasiRoutes) Setup() {
 	s.logger.Zap.Info("Setting Up Routes")
-	api := s.handler.Gin.Group("/api/v1/verifikasireportrealisasi").Use(s.authMiddleware.Handler())
+	api := s.handler.Gin.Group("/api/v1/verifikasireportrealisasi")
 	{
 		// Report Realisasi Kredit 11/07/2024
 		api.POST("/reportRealisasiKreditListFilter", s.VerifikasiReportRealisasiController.ReportRealisasiKreditListFilter)
