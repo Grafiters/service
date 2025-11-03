@@ -1,0 +1,10 @@
+vendor
+server.log
+clean-gin
+__debug_bin
+.idea
+main
+storage/uploads/*
+.env
+.save
+tmp/*
