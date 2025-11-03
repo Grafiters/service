@@ -30,6 +30,8 @@ func NewDatabase(env env.Env, zapLogger zapLog.Logger) Database {
 
 	url := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local", username, password, host, port, dbname)
 
+	fmt.Println(url)
+
 	newLogger := logger.New(
 		log.New(os.Stdout, "\r\n", log.LstdFlags),
 		logger.Config{
